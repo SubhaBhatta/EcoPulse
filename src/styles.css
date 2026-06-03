@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+.glass {
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 24px 80px rgba(15, 23, 42, 0.12);
+  backdrop-filter: blur(22px);
+}
+
+.dark .glass {
+  border-color: rgba(148, 163, 184, 0.16);
+  background: rgba(15, 23, 42, 0.68);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.26);
+}
+
+.premium-card {
+  @apply glass rounded-[1.65rem] p-5 transition duration-300;
+}
+
+.metric-label {
+  @apply text-xs font-medium uppercase tracking-[0.22em] text-slate-500 dark:text-slate-400;
+}
+
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+  border-radius: 1.5rem;
+  background: #0f172a;
+}
+
+.scrollbar-hide {
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
