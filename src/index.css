@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #00C853;
+  --secondary: #00E676;
+  --accent: #76FF03;
+  --danger: #FF5252;
+  --warning: #FFD600;
+  --background: #0F172A;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-slate-100 selection:bg-primary/30 selection:text-primary;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/5 backdrop-blur-md border border-white/10 shadow-glass;
+  }
+  
+  .glass-card {
+    @apply glass rounded-2xl p-6 transition-all duration-300 hover:bg-white/10 hover:border-white/20;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent;
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 bg-primary hover:bg-secondary text-background font-bold rounded-xl transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-glow;
+  }
+
+  .nav-link {
+    @apply text-slate-400 hover:text-primary transition-colors duration-300 font-medium;
+  }
+
+  .nav-link.active {
+    @apply text-primary;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-background;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-800 rounded-full hover:bg-slate-700 transition-colors;
+}
+
+/* Leaflet Map Overrides */
+.leaflet-container {
+  background: transparent !important;
+  border-radius: 1rem;
+}
+
+.custom-marker {
+  @apply w-4 h-4 rounded-full border-2 border-white animate-pulse;
+}
+
+/* Recharts Overrides */
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: rgba(255, 255, 255, 0.05);
+}
+
+.recharts-tooltip-wrapper {
+  outline: none !important;
+}
