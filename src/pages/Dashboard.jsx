@@ -54,7 +54,7 @@ const Dashboard = () => {
               <Sparkles size={20} />
             </div>
             <div>
-              <p className="text-sm font-bold text-white">AI Quick Insight:</p>
+              <p className="text-sm font-bold text-white">Quick Insight:</p>
               <p className="text-sm text-slate-400 italic">
                 "Today Kathmandu has a Moderate Environmental Risk (
                 {healthScore}/100). Outdoor exercise is recommended after 5 PM
